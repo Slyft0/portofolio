@@ -1,0 +1,222 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #171717;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main Layout */
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.content {
+    width: 100%;
+    max-width: 36rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    color: #171717;
+}
+
+.name-highlight {
+    color: #8F5EFF;
+    position: relative;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    font-weight: 300;
+    color: #666666;
+    letter-spacing: -0.01em;
+}
+
+/* Social Navigation */
+.social-nav {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: #666666;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    background-color: transparent;
+}
+
+.social-link:hover {
+    color: #8F5EFF;
+    background-color: rgba(143, 94, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.social-link:focus {
+    outline: 2px solid #8F5EFF;
+    outline-offset: 2px;
+}
+
+/* SVG Icons */
+.social-link svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-link:hover svg {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .content {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+    
+    .hero {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .social-nav {
+        justify-content: center;
+        gap: 0.75rem;
+    }
+    
+    .social-link {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .social-nav {
+        gap: 0.5rem;
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-link svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+    .content {
+        padding: 6rem 2rem;
+    }
+    
+    .hero {
+        margin-bottom: 4rem;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .name-highlight {
+        color: #7A4CDE;
+        text-decoration: underline;
+    }
+    
+    .social-link:hover {
+        background-color: rgba(143, 94, 255, 0.2);
+        border: 2px solid #8F5EFF;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .social-link {
+        transition: none;
+    }
+    
+    .social-link:hover {
+        transform: none;
+    }
+    
+    .social-link svg {
+        transition: none;
+    }
+    
+    .social-link:hover svg {
+        transform: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .social-nav {
+        display: none;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}
